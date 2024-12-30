@@ -1,31 +1,37 @@
-package com.pojo;
+package com.StudentEntity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Student {
-	private String stud_name;
+	@Id
 	private int roll_number;
+	private String stud_name;
 	private String address;
 	private int age;
 	private String gender;
+	private int adhar_no;
 
-	public Student() {
-		super();
+	@Override
+	public String toString() {
+		return "Student [roll_number=" + roll_number + ", stud_name=" + stud_name + ", address=" + address + ", age="
+				+ age + ", gender=" + gender + ", adhar_no=" + adhar_no + "]";
 	}
 
-	public Student(String stud_name, int roll_number, String address, int age, String gender) {
+	public Student(int roll_number, String stud_name, String address, int age, String gender, int adhar_no) {
 		super();
-		this.stud_name = stud_name;
 		this.roll_number = roll_number;
+		this.stud_name = stud_name;
 		this.address = address;
 		this.age = age;
 		this.gender = gender;
+		this.adhar_no = adhar_no;
 	}
 
-	public String getStud_name() {
-		return stud_name;
-	}
-
-	public void setStud_name(String stud_name) {
-		this.stud_name = stud_name;
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public int getRoll_number() {
@@ -34,6 +40,14 @@ public class Student {
 
 	public void setRoll_number(int roll_number) {
 		this.roll_number = roll_number;
+	}
+
+	public String getStud_name() {
+		return stud_name;
+	}
+
+	public void setStud_name(String stud_name) {
+		this.stud_name = stud_name;
 	}
 
 	public String getAddress() {
@@ -60,9 +74,11 @@ public class Student {
 		this.gender = gender;
 	}
 
-	@Override
-	public String toString() {
-		return "Student [stud_name=" + stud_name + ", roll_number=" + roll_number + ", address=" + address + ", age="
-				+ age + ", gender=" + gender + "]";
+	public int getAdhar_no() {
+		return adhar_no;
+	}
+
+	public void setAdhar_no(int adhar_no) {
+		this.adhar_no = adhar_no;
 	}
 }
